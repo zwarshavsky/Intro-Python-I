@@ -5,7 +5,9 @@
 x = 12
 
 def change_x():
+    global x
     x = 99
+    return x
 
 change_x()
 
@@ -19,7 +21,10 @@ def outer():
     y = 120
 
     def inner():
+        #nonlocal functions within a nested function similarly to how a global variable declaration does with an outer function
+        nonlocal y
         y = 999
+        return y
 
     inner()
 
